@@ -61,10 +61,12 @@
                         </tr>
 
                     @endforeach
-                    <tr>
 
-                    </tr>
                 </table>
+
+                    <div class="d-flex">
+                        {!! $posts->links() !!}
+                    </div>
             </div>
         </div>
     </div>

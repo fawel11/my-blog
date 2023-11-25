@@ -8,18 +8,25 @@ use App\Models\BlogPost;
 class BlogPostRepository implements BlogPostRepositoryInterface
 {
 
-    public function getAllBlogs()
+    public function getAllBlogs($paginate = 5)
     {
-        return BlogPost::get();
+        return BlogPost::paginate($paginate);
     }
-    public function getMyBlogs()
+
+    public function getMyBlogs($paginate = 5)
     {
-        return BlogPost::where('user_id',auth()->user()->id)->get();
+        return BlogPost::where('user_id', auth()->user()->id)->paginate($paginate);
     }
+
 
     public function getBlogById($blogId)
     {
         return BlogPost::findOrFail($blogId);
+    }
+
+    public function getBlogByTitle($title)
+    {
+        return BlogPost::where('title', $title)->first();
     }
 
     public function deleteBlog($blogId)

@@ -13,12 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/post/{title}', 'HomeController@details')->name('home.details');
+
+
 
 Route::get('/dashboard', function () {
-    return redirect()->route('posts.index');
+    return redirect()->to('posts');
 })->middleware(['auth'])->name('dashboard');
 
 
