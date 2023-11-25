@@ -95,6 +95,10 @@ Make sure you have the following installed:
 
     - **Email:** admin@example.com
     - **Password:** 12345678
+## API for POSTMAN
+1. **Import the json file in postman:**
+
+    - **Path:** /My Blog.postman_collection.json
 
 ## Additional Configuration
 
