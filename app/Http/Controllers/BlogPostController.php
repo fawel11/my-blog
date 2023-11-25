@@ -52,7 +52,7 @@ class BlogPostController extends Controller
 
         $post = $this->blogPostRepository->getBlogById($id);
 
-        if (!$post->isTheOwner(Auth::user())) return redirect()->back()->with('error', 'Whoops!!');
+        if (!$post->isTheOwner(Auth::user()) && !auth()->user()->isAdmin() ) return redirect()->back()->with('error', 'Whoops, You are not allowed to see it!');
 
         return view('posts.show', compact('post'));
     }
@@ -61,7 +61,7 @@ class BlogPostController extends Controller
     public function edit($postId)
     {
         $post = $this->blogPostRepository->getBlogById($postId);
-        if (!$post->isTheOwner(Auth::user())) return redirect()->back()->with('error', 'Whoops!!');
+        if (!$post->isTheOwner(Auth::user()) && !auth()->user()->isAdmin() ) return redirect()->back()->with('error', 'Whoops, You are not allowed to edit it!');
 
         return view('posts.edit', compact('post'));
 

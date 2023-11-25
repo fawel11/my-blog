@@ -22,6 +22,12 @@
                     </div>
                 @endif
 
+                    @if ($message = Session::get('error'))
+                    <div class="alert alert-warning card shadow">
+                        <p>{{ $message }}</p>
+                    </div>
+                @endif
+
                 <table class="table table-bordered table-hover">
                     <tr>
                         <th>#</th>
