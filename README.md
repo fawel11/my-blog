@@ -19,13 +19,13 @@ Make sure you have the following installed:
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-username/laravel-blog-app.git
+    git clone https://github.com/fawel11/my-blog.git
     ```
 
 2. **Navigate to the project directory:**
 
     ```bash
-    cd laravel-blog-app
+    cd my-blog
     ```
 
 3. **Install PHP dependencies:**

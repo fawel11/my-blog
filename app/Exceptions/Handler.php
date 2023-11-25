@@ -122,7 +122,10 @@ class Handler extends ExceptionHandler
         });
 
 
-        $this->reportable(function (Throwable $e, $request) {
+
+
+
+        $this->reportable(function (Throwable $e) {
 
         });
     }
